@@ -1,38 +1,294 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100;300;500&family=DM+Serif+Text:ital@0;1&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Manrope', sans-serif !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img.logo {
+  height: 70px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+span.top-bar-info {
+    font-size: 13px;
+    color: #ffdcdc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.appbar-btn {
+  margin: 15px;
+  background: linear-gradient(to bottom, #9200f3, rgb(31, 0, 66));
+  border: none;
   color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.1s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.appbar-btn:hover {
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #000000;
+  padding: 3px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #9F0B0B;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover-tagname-animation {
+  position: relative;
+  margin: 17px;
+  cursor: pointer;
+  color:#9F0B0B;
+}
+
+.hover-tagname-animation:hover {
+  font-weight: 600;
+  transition: 0.1s linear;
+}
+
+.hover-tagname-animation::after {
+  content: ">>";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  opacity: 0;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+}
+
+.hover-tagname-animation:hover::after {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+
+.hover-navbar-button {
+	--width: 100%;
+	--time: 0.5s;
+  margin: 15px;
+  background: none;
+  border: 2px solid #9F0B0B;
+  color: #9F0B0B;
+  border-radius: 25px;
+  padding: 6px 20px;
+  cursor: pointer;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+  font-weight: 600;
+}
+
+.hover-navbar-button text {
+	position: relative;
+	z-index: 5;
+
+	transition: color var(--time);
+}
+
+.hover-navbar-button:hover text {
+	color: #ffffff;
+  font-weight: 600;
+}
+
+.hover-navbar-button span {
+	position: absolute;
+	display: block;
+	content: "";
+	z-index: 0;
+	width: 0;
+	height: 0;
+	
+	border-radius: 100%;
+	background: linear-gradient(to bottom, #9F0B0B, rgb(31, 0, 66));
+	
+	transform: translate(-50%, -50%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.hover-navbar-button:hover span {
+	width: calc(var(--width) * 2.25);
+	padding-top: calc(var(--width) * 2.25);
+}
+
+.header-container-tag {
+	--width: 100%;
+	--time: 0.3s;
+  margin: 4px;
+  background: none;
+  border: 2px solid #22194e;
+  color: #22194e;
+  border-radius: 25px;
+  padding: 6px 20px;
+  cursor: pointer;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+  font-weight: 600;
+}
+
+.header-container-tag text {
+	position: relative;
+	z-index: 5;
+
+	transition: color var(--time);
+}
+
+.header-container-tag:hover text {
+	color: #ffffff;
+  font-weight: 600;
+}
+
+.header-container-tag span {
+	position: absolute;
+	display: block;
+	content: "";
+	z-index: 0;
+	width: 0;
+	height: 0;
+	border-radius: 100%;
+	background: linear-gradient(to bottom, #22194e, rgb(5, 56, 24));
+	transform: translate(-40%, -40%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.header-container-tag:hover span {
+	width: calc(var(--width) * 2.25);
+	padding-top: calc(var(--width) * 2.25);
+}
+
+.from-left-and-back {
+  background-image: linear-gradient(to left, #a71a2b 45%, rgb(0, 0, 0) 55%);
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+}
+
+.from-left-and-back:hover {
+  background-position: 0% 50%;
+}
+
+h1.from-left-and-back {
+  cursor: pointer;
+  line-height: 1.2;
+  margin: 0 !important;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: no-repeat;
+  transition: 0.5s ease-out;
+  font-family: 'DM Serif Text', serif !important;
+}
+
+img.header-display-template-1 {
+  height: 400px;
+  box-shadow: 2px 1px 15px #0000004a;
+}
+
+p.header-text-styling {
+  font-size: 15px;
+  color:rgb(121, 0, 0) !important;
+}
+
+p.header-text-info-styling {
+  font-size: 15px;
+  font-family: 'Anek Tamil', sans-serif !important;
+  color:rgb(121, 0, 0) !important;
+}
+
+
+.header-image{
+  width: 100%;
+  height: 80vh !important;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://www.weddingsutra.com/images/wedding-images/entertaining/muslim-wedding/muslim-wedding-02.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.aboutImageContainer{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://www.weddingsutra.com/images/wedding-images/entertaining/muslim-wedding/muslim-wedding-02.webp);
+  background-size: fill;
+}
+
+.ourStoryImageContainer{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://immatrimony.com/assets/content/images/our-services.jpg);
+  background-size: fill;
+}
+
+.nikkahlankaImageContainer{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://www.weddingsutra.com/images/wedding-images/entertaining/muslim-wedding/muslim-wedding-02.webp);
+  background-size: fill;
+}
+
+.nikkahlankatolifebondImageContainer{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://www.weddingsutra.com/images/wedding-images/entertaining/muslim-wedding/muslim-wedding-02.webp);
+  background-size: fill;
+}
+
+.navtransition {
+  transition: background-color 0.5s ease;
+}
+
+hr.stylistic-header-breakline {
+  width: 45%;
+  float: left;
+  height: 4px;
+  border-radius: 0%;
+  border: 0px solid black;
+  background: linear-gradient(to right, #600909, red);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #4005054a;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(112, 3, 3); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #690303; 
 }
